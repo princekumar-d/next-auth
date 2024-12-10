@@ -226,7 +226,7 @@ export async function signIn<
   const { callbackUrl = window.location.href, redirect = true } = options ?? {}
 
   const baseUrl = apiBaseUrl(__NEXTAUTH)
-  const providers =  await getProviders() ?? defaultProviders
+  const providers =  defaultProviders ?? await getProviders()
 
   if (!providers) {
     window.location.href = `${baseUrl}/error`
